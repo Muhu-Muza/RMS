@@ -5,8 +5,8 @@ const DetailsPage = () => {
   return (
     <>
       <div className="home">
-        <Link to="/">
-            <button>Home</button>
+        <Link to="/" style={{ textDecoration: "none" }}>
+            <button>Back</button>
         </Link>
       </div>
 

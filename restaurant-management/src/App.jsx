@@ -1,11 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Restaurant from '../../components/Restaurant';
+import Restaurant from '../components/Restaurant';
 import './index.css';
-import UpdateForm from '../../components/UpdateForm';
-import AddForm from '../../components/AddForm';
-import DetailsPage from '../../components/DetailsPage';
-
+import UpdateForm from '../components/UpdateForm';
+import AddForm from '../components/AddForm';
+import DetailsPage from '../components/DetailsPage';
 
 function App() {
   return (
@@ -14,7 +13,7 @@ function App() {
         <Route path="/" element={<Restaurant />} />
         <Route path="/form" element={<AddForm />} />
         <Route path="/update" element={<UpdateForm />} />
-        <Route path="/details" element={<DetailsPage />} />
+        <Route path="/details/:name" element={<DetailsPage />} />
       </Routes>
     </Router>
   );

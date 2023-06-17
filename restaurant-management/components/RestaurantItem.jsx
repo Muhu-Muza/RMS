@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 
 const RestaurantItem = () => {
   const details = [
@@ -29,9 +30,14 @@ const RestaurantItem = () => {
     <div>
       {details.map((item, index) => (
         <div className="container" key={index}>
-          <div className="item">
-            <h2>{item.name}</h2>
-          </div>
+          <Link 
+            to={`/details/${encodeURIComponent(item.name)}`} 
+            style={{ textDecoration: "none", color: "inherit" }}
+            >
+            <div className="item">
+              <h2>{item.name}</h2>
+            </div>
+          </Link>
           <div className="item2">
             <p>Cuisine: {item.information.cuisine}</p>
             <p>Location: {item.information.location}</p>
