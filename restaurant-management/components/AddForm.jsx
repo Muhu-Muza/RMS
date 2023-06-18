@@ -44,7 +44,7 @@ const AddForm = () => {
     </div>
       <div className="form">
         <h1>Add Restaurant</h1>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} method="post" enctype="multipart/form-data">
           <div className="form-content">
             <div className="form-item">
               <label>

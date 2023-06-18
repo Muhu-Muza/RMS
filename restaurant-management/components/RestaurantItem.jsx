@@ -8,6 +8,7 @@ const RestaurantItem = () => {
       information: {
         cuisine: "Nigerian Native Dishes",
         location: "Kiwatule",
+        image: ""
       },
     },
     {
@@ -15,6 +16,7 @@ const RestaurantItem = () => {
       information: {
         cuisine: "All Fast Foods",
         location: "Nsambya",
+        image: ""
       },
     },
     {
@@ -22,6 +24,7 @@ const RestaurantItem = () => {
       information: {
         cuisine: "Pizzeria",
         location: "Wandegeya",
+        image: ""
       },
     },
   ];

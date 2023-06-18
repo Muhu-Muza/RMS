@@ -44,7 +44,7 @@ const UpdateForm = () => {
     </div>
       <div className="form">
         <h1>Update Information</h1>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} method="post" enctype="multipart/form-data">
           <div className="form-content">
             <div className="form-item">
               <label>
