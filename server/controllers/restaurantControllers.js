@@ -1,22 +1,25 @@
-const express = require('express');
-const router = express.Router();
 const Restaurant = require('../models/restaurant');
 
 // Create a new restaurant
-const createRestaurant = (async (req, res) => {
-  try {
-    const { name, description } = req.body;
-    const image = req.file.filename;
-
-    const restaurant = new Restaurant({ name, description, image });
-    await restaurant.save();
-
-    res.status(201).json({ message: 'Restaurant created successfully' });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: 'Server error' });
-  }
-});
+const createRestaurant = async (req, res) => {
+    try {
+      const restaurant = new Restaurant({
+        name: req.body.name,
+        information: {
+          cuisine: req.body.cuisine,
+          location: req.body.location,
+          image: req.body.image,
+        },
+      });
+  
+      const savedRestaurant = await restaurant.save();
+  
+      res.status(201).json(savedRestaurant);
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ message: 'Server error' });
+    }
+  };
 
 // Get all restaurants
 const getRestaurants = (async (req, res) => {
