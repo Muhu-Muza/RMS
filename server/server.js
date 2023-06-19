@@ -2,6 +2,7 @@ require('dotenv').config();
 
 
 const express = require('express');
+const cors = require('cors');
 const multer = require('multer');
 const path = require('path');
 const connectDb = require("./config/dbConnection");
@@ -11,6 +12,7 @@ connectDb();
 const app = express();
 
 
+app.use(cors());
 app.use(express.json());
 app.use("/api/restaurants", require("./routes/restaurantRoutes"));
 
